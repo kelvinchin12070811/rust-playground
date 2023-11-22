@@ -1,6 +1,7 @@
 FROM rust:latest
-
+WORKDIR /app
 COPY .bashrc /root/.bashrc
+COPY . .
 
 # Source: https://dev.to/codingalex/run-vs-code-remote-tunnels-in-a-container-4lf4
 RUN apt-get update && \
@@ -10,6 +11,12 @@ RUN apt-get update && \
     curl -sL "https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64" \
     --output /tmp/vscode-cli.tar.gz && \
     tar -xf /tmp/vscode-cli.tar.gz -C /usr/bin && \
-    rm /tmp/vscode-cli.tar.gz
+    rm /tmp/vscode-cli.tar.gz && \
+    mkdir /home/workspace && \
+    mkdir /home/workspace/persisted && \
+    mkdir /home/workspace/non-persisted && \
+    chmod 777 startup.sh
 
-CMD [ "code", "tunnel", "--accept-server-license-terms" ]
+CMD ["/bin/bash", "-c", "./startup.sh"]
+# CMD ["code", "tunnel", "--accept-server-license-terms"]
+
