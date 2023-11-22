@@ -1,5 +1,7 @@
 FROM rust:latest
 
+COPY .bashrc /root/.bashrc
+
 # Source: https://dev.to/codingalex/run-vs-code-remote-tunnels-in-a-container-4lf4
 RUN apt-get update && \
     apt-get install -y git curl && \
