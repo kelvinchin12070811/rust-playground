@@ -1,10 +1,13 @@
 #! /bin/bash
 yes() {
     cd /home/playground
-    echo "Removing all files in the playground folder..."
-    rm -rf ./{*,.*} && cargo init --vcs none
-    echo "Copying assets to the playground folder..."
-    cp -R /app/assets/.vscode .
+
+    echo "Removing all files in the playground folder..." && \
+    rm -rf ./{*,.*} && \
+    echo "Initializing cargo project..." && \
+    cargo init --vcs none && \
+    echo "Copying assets to the playground folder..." && \
+    cp -R /app/assets/.vscode . && \
     echo "Done!"
 }
 
