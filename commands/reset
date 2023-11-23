@@ -1,0 +1,25 @@
+#! /bin/bash
+yes() {
+    cd /home/playground
+    rm -rf ./{*,.*} && cargo init --vsc none
+}
+
+no() {
+    exit 0
+}
+
+if [[ "$FEATURE_RESET" != "1" ]]; then
+    echo "Feature not enabled, you may enable it by setting the environment varaible USE_RESET to 1."
+    echo "Beware this is a destructive feature and will wipe out all your data."
+    exit 0
+fi
+
+echo "Warning: This is a destructive feature and will wipe out all your data in the playground."
+echo "Are you sure you want to proceed? (y/n)"
+read answer
+
+case $answer in
+    [yY]* ) yes;;
+    [nN]* ) no;;
+    * ) echo "Invalid input";;
+esac

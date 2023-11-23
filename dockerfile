@@ -12,11 +12,9 @@ RUN apt-get update && \
     --output /tmp/vscode-cli.tar.gz && \
     tar -xf /tmp/vscode-cli.tar.gz -C /usr/bin && \
     rm /tmp/vscode-cli.tar.gz && \
-    mkdir /home/workspace && \
-    mkdir /home/workspace/persisted && \
-    mkdir /home/workspace/non-persisted && \
-    chmod 777 startup.sh
+    mkdir /home/playground && \
+    chmod 777 startup.sh && \
+    chmod 777 commands/reset
 
 CMD ["/bin/bash", "-c", "./startup.sh"]
-# CMD ["code", "tunnel", "--accept-server-license-terms"]
 
