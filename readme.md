@@ -190,6 +190,10 @@ Bellow is a list of custom commands that may come into help:
             variable <code>FEATURE_RESET</code> to <code>1</code>.
         </td>
     </tr>
+    <tr>
+        <td>about</td>
+        <td>Nothing fancy, just prints the about text.</td>
+    </tr>
 </table>
 
 ## Credit
