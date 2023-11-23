@@ -20,7 +20,7 @@ echo "To download a copy of your data, you can archive everything in the playgro
 echo "extension of vs code to serve the directory and download it. You may also use another method to backup them"
 echo "including using a git repository."
 echo ""
-echo "Are you sure you want to proceed? (y/n)"
+echo "Are you sure you want to proceed? [Y/n]"
 read answer
 
 case $answer in
