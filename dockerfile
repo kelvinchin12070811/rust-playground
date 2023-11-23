@@ -14,7 +14,8 @@ RUN apt-get update && \
     rm /tmp/vscode-cli.tar.gz && \
     mkdir /home/playground && \
     chmod 777 startup.sh && \
-    chmod -R 777 commands
+    chmod -R 777 commands && \
+    rustup component add rustfmt
 
 WORKDIR /home/playground
 RUN cargo init --vcs none && cp -R /app/assets/.vscode .
