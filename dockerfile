@@ -5,7 +5,7 @@ COPY . .
 
 # Source: https://dev.to/codingalex/run-vs-code-remote-tunnels-in-a-container-4lf4
 RUN apt-get update && \
-    apt-get install -y git curl figlet && \
+    apt-get install -y git curl && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     curl -sL "https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64" \
@@ -14,8 +14,9 @@ RUN apt-get update && \
     rm /tmp/vscode-cli.tar.gz && \
     mkdir /home/playground && \
     chmod 777 startup.sh && \
-    chmod -R 777 commands && \
-    rustup component add rustfmt
+    chmod -R 777 commands
+
+RUN rustup component add rustfmt
 
 WORKDIR /home/playground
 RUN cargo init --vcs none && cp -R /app/assets/.vscode .
