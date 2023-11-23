@@ -1,7 +1,7 @@
 #! /bin/bash
 yes() {
     cd /home/playground
-    rm -rf ./{*,.*} && cargo init --vsc none
+    rm -rf ./{*,.*} && cargo init --vcs none
 }
 
 no() {
@@ -9,7 +9,7 @@ no() {
 }
 
 if [[ "$FEATURE_RESET" != "1" ]]; then
-    echo "Feature not enabled, you may enable it by setting the environment varaible USE_RESET to 1."
+    echo "Feature not enabled, you may enable it by setting the environment varaible FEATURE_RESET to 1."
     echo "Beware this is a destructive feature and will wipe out all your data."
     exit 0
 fi

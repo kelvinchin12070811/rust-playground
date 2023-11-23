@@ -16,5 +16,8 @@ RUN apt-get update && \
     chmod 777 startup.sh && \
     chmod 777 commands/reset
 
-CMD ["/bin/bash", "-c", "./startup.sh"]
+WORKDIR /home/playground
+RUN cargo init --vcs none
+
+CMD ["/bin/bash", "-c", "/app/startup.sh"]
 

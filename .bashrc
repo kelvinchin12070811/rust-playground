@@ -1,1 +1,4 @@
-export PATH="${PATH}:/usr/local/cargo/bin:/app/commands"
+export PATH="/app/commands:/usr/local/cargo/bin:${PATH}"
+
+alias hop="cd /home/playground"
+alias code-hop="code /home/playground"
