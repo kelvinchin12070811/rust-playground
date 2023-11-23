@@ -2,6 +2,7 @@
 yes() {
     cd /home/playground
     rm -rf ./{*,.*} && cargo init --vcs none
+    cp -R /app/assets/.vscode .
 }
 
 no() {

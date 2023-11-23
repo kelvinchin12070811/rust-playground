@@ -17,7 +17,7 @@ RUN apt-get update && \
     chmod -R 777 commands
 
 WORKDIR /home/playground
-RUN cargo init --vcs none
+RUN cargo init --vcs none && cp -R /app/assets/.vscode .
 
 CMD ["/bin/bash", "-c", "/app/startup.sh"]
 

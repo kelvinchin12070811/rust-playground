@@ -1,3 +1,5 @@
 .dockerignore
 dockerfile
 .git
+.start-container.ps1
+.vscode
