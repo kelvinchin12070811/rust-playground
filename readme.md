@@ -154,6 +154,9 @@ Now we can access to the tunnel via the link given. We can also able to access t
 development extension or from [vscode.dev](https://vscode.dev). Login to the same github account on prompt and we are
 ready to rock it.
 
+As the docker file pull the rust image via the latest tag, to update the rust version, simply rebuild the image and
+redeploy it. VS Code cli should updated by it self when needed.
+
 ## Usage
 
 The folder we going to write our rust code is at `/home/playground`. If you are not in this directory, you can use the
